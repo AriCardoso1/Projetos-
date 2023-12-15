@@ -1,31 +1,32 @@
-class hero {
+class Hero {
     constructor(name, age, type) {
-
-    this.name = name
-    this.age = age
-    this.type = type
-
-   }
-   attack(){
-    let attackType = "One"
-    switch (attackType){
-        case "One":
-            console.log("Used shuriken")
-            break
-        case "Two":
-            console.log("Used martial arts")
-            break
-        case "Three":
-            console.log("Used magic")
-            break
-        case "Four":
-            console.log("Usou a sword")
-            break  
-    console.log(`to win the battle ${this.attack}`)                 
+        this.name = name;
+        this.age = age;
+        this.type = type;
     }
 
-   }
+    attack() {
+        let attackType = "Wizard";
+        let attackDescription;
+
+        switch (attackType) {
+            case "Ninja":
+                attackDescription = "shuriken";
+                break;
+            case "Monk":
+                attackDescription = "martial arts";
+                break;
+            case "Wizard":
+                attackDescription = "magic";
+                break;
+            case "Warrior":
+                attackDescription = "sword";
+                break;
+        }
+
+        console.log(`The ${this.type} type hero, ${this.name}, won the battle using ${attackDescription}.`);
+    }
 }
 
-let combat = new hero("Marcos", 22, "Ninja")
-
+let combat = new Hero("Marcos", 22, "Wizard");
+combat.attack();
